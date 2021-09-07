@@ -230,7 +230,7 @@ if [[ -n "$TG_TOKEN" ]]; then
         if [[ -n "$TG_CHAT" ]]; then
                  CHAT_ID=$(< "$PROJECT_DIR"/.tg_chat)
         else
-                 CHAT_ID="@AndroidDumpsCI"
+                 CHAT_ID="@XenonTheInertGCI"
         fi
         commit_head=$(git log --format=format:%H | head -n 1)
         commit_link="https://github.com/$ORG/$repo/commit/$commit_head"
@@ -243,7 +243,7 @@ if [[ -n "$TG_TOKEN" ]]; then
             printf "\n<b>GitHub:</b>"
             printf "\n - <a href=\"%s\">Commit</a>" "$commit_link"
             printf "\n - <a href=\"https://github.com/%s/%s/tree/%s/\">%s</a>" "$ORG" "$repo" "$branch" "$codename"
-            printf "\n\n<b>Follow:</b> @AndroidDumpsCI"
+            printf "\n\n<b>🛠️CI|Firmware Dumped by:</b>XenonTheInertG"
         } >> "$PROJECT_DIR"/working/tg.html
         TEXT=$(< "$PROJECT_DIR"/working/tg.html)
         curl -s "https://api.telegram.org/bot${TG_TOKEN}/sendmessage" --data "text=${TEXT}&chat_id=${CHAT_ID}&parse_mode=HTML&disable_web_page_preview=True" > /dev/null
