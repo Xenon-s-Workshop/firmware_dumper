@@ -248,7 +248,7 @@ if [[ -n "$TG_TOKEN" ]]; then
             printf "\n<b>GitHub:</b>"
             printf "\n - <a href=\"%s\">Commit</a>" "$commit_link"
             printf "\n - <a href=\"https://github.com/%s/%s/tree/%s/\">%s</a>" "$ORG" "$repo" "$branch" "$codename"
-            printf "\n\n 🛠️CI|Firmware Dumped by:XenonTheInertG"
+            printf "\n\n 🛠️CI|Firmware Dumped by XenonTheInertG"
         } >> "$PROJECT_DIR"/working/tg.html
         TEXT=$(< "$PROJECT_DIR"/working/tg.html)
         curl -s "https://api.telegram.org/bot${TG_TOKEN}/sendmessage" --data "text=${TEXT}&chat_id=${CHAT_ID}&parse_mode=HTML&disable_web_page_preview=True" > /dev/null
